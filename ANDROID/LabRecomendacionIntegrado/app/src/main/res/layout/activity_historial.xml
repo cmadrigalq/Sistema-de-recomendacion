@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Pantallas.HistorialAct">
+
+    <TableLayout
+        android:id="@+id/tabla"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background="@drawable/tableborder"
+            android:backgroundTint="#b6c2d6"
+            >
+
+            <TextView
+                android:layout_width="114dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/tableborder"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Producto"
+                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/tableborder"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Cant."
+                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="209dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/tableborder"
+                android:gravity="center"
+                android:padding="15dp"
+                android:text="Fecha"
+                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>

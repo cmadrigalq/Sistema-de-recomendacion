@@ -1,0 +1,15 @@
+com\pruebas\be_productos\servicios\UsuariosServicio.class
+com\pruebas\be_productos\entidades\Historial.class
+com\pruebas\be_productos\entidades\Usuario.class
+com\pruebas\be_productos\servicios\HistorialServicio.class
+com\pruebas\be_productos\entidades\Producto.class
+com\pruebas\DataBase\NoDataException.class
+com\pruebas\be_productos\servicios\CompraServicio.class
+com\pruebas\be_productos\Control\Control.class
+com\pruebas\be_productos\querys\Querys.class
+com\pruebas\be_productos\servicios\ProductoServicio.class
+com\pruebas\be_productos\entidades\Compra.class
+com\pruebas\be_productos\probando\Main.class
+com\pruebas\Servlet\Servlet.class
+com\pruebas\DataBase\GlobalException.class
+com\pruebas\DataBase\Servicio.class
