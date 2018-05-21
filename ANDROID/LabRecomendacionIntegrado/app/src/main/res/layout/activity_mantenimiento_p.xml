@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.moviles1.cyn.ejemploscortos.Pantallas.MantenimientoP">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_x="0dp"
+        android:layout_y="0dp"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="253dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <LinearLayout
+            android:id="@+id/linearParent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/lblUserNameLayout"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/lblBusc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="Código:"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold"
+                    tools:text="Código:" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/txLayout"
+                android:layout_width="428dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/filtro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edittext_bottom_line"
+                    android:ems="10"
+                    android:inputType="text" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnBuscar"
+                    android:layout_width="137dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@android:drawable/ic_search_category_default"
+                    android:text="Buscar"
+                    tools:text="Buscar" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnNuevo"
+                style="@style/Widget.AppCompat.Button"
+                android:layout_width="fill_parent"
+                android:layout_height="144dp"
+                android:layout_weight="1"
+                android:background="@android:color/holo_green_light"
+                android:drawableRight="@android:drawable/ic_menu_add"
+                android:text="Nuevo"
+                tools:text="Nuevo" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="361dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:stretchColumns="*">
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <HorizontalScrollView
+                    android:id="@+id/horizontalView"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="horizontal|vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="5dip">
+                    <TableLayout
+                        android:id="@+id/idTable"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/tableborder"
+                        android:stretchColumns="*">
+
+                        <TableRow
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/tableborder"
+                            android:backgroundTint="#b6c2d6">
+
+                            <TextView
+                                android:layout_width="46dp"
+                                android:layout_height="fill_parent"
+                                android:background="@drawable/tableborder"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="Codigo"
+                                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                            <TextView
+                                android:layout_width="128dp"
+                                android:layout_height="fill_parent"
+                                android:background="@drawable/tableborder"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="Nombre"
+                                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                            <TextView
+                                android:layout_width="1pt"
+                                android:layout_height="fill_parent"
+                                android:layout_span="2"
+                                android:background="@drawable/tableborder"
+                                android:gravity="center"
+                                android:padding="15dp"
+                                android:text="Acciones"
+                                android:textAppearance="@style/TextAppearance.AppCompat" />
+
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

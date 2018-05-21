@@ -18,6 +18,10 @@
             android:id="@+id/nav_listaUsuarios"
             android:icon="@drawable/ic_menu_manage"
             android:title="Lista de Usuarios" />
+        <item
+            android:id="@+id/nav_P"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Mantenimiento de Productos" />
     </group>
 
     <item android:title="Opciones">

@@ -100,6 +100,9 @@ public class NavDrawActivity extends AppCompatActivity
             Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             Toast.makeText(this,"Sesión cerrada",Toast.LENGTH_SHORT).show();
+        }else if(id == R.id.nav_P){
+            Intent intent = new Intent(this, MantenimientoP.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -30,9 +30,17 @@ public class Querys {
             + "where num_compra IN (SELECT num_compra from compra c"
             + "  where c.usuario = '%s'"
             + ");";
+    public static final String  BORRARHISTORIALBYP =
+            "Delete from historial "
+            + "where num_compra IN (SELECT num_compra from compra c"
+            + "  where c.producto = '%s'"
+            + ");";
     public static final String BORRARCOMPRAS = 
             "Delete from compra "
             + "where usuario = '%s';";
+    public static final String BORRARCOMPRASBYP = 
+            "Delete from compra "
+            + "where producto = '%s';";
     public static final String BORRARUSER = 
             "Delete from usuario where usuario = '%s';";
     ////////////////////////////////////////////////////////////////////
@@ -41,11 +49,16 @@ public class Querys {
     
     public static final String UPDATEPRODUCTO = 
             "UPDATE  PRODUCTO "
-            + "set cantidad = %d "
+            + "set nombre = '%s',"
+            + "descripcion = '%s',"
+            + "precio = %d "
+            + "where codigo = '%s';";
+    public static final String DELETEPRODUCTO = 
+            "Delete from Producto "
             + "where codigo = '%s';";
     public static final String ADDPRODUCTO = 
             "Insert Into Producto values "
-            + "('%s','%s','%s',%d,%d);";
+            + "('%s','%s','%s',%d,%d,%d,%f);";
     ///////////////////////////////////////////////////////////////////
     public static final String ADDCOMPRA =
             "Insert Into Compra "

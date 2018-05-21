@@ -34,7 +34,9 @@
         <activity android:name=".Pantallas.CarritoActivity" />
         <activity android:name=".Pantallas.MantenimientoUsuariosActivity" />
         <activity android:name=".Pantallas.FormularioUsuarioActivity" />
-        <activity android:name=".Pantallas.HistorialAct"></activity>
+        <activity android:name=".Pantallas.HistorialAct" />
+        <activity android:name=".Pantallas.MantenimientoP" />
+        <activity android:name=".Pantallas.FormP"></activity>
     </application>
 
 </manifest>

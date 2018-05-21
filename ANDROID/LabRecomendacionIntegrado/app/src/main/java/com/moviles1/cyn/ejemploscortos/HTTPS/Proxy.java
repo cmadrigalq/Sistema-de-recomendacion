@@ -75,26 +75,36 @@ public class Proxy {
         return json.toProductoss(res);
     }
     /////////////////////////////////////////////////
-    public Boolean updateProducto(String codigo,Integer nuevaCantidad){
+    public Boolean updateProducto(String codigo,String nombre,String desc,Double precio){
         String url = "?action=updateP";
         HashMap<String,Object> args = new HashMap<>();
         args.put("codigo",codigo);
-        args.put("nuevaCant",nuevaCantidad.toString());
+        args.put("nombre",nombre);
+        args.put("desc",desc);
+        args.put("precio",new Integer(precio.intValue()).toString());
+        String res = cl.getOutputFromUrl(url,null,"POST",args);
+        return res.toUpperCase().equals("TRUE");
+    }
+    /////////////////////////////////////////////////
+    public Boolean deleteProducto(String codigo){
+        String url = "?action=deleteP";
+        HashMap<String,Object> args = new HashMap<>();
+        args.put("codigo",codigo);
         String res = cl.getOutputFromUrl(url,null,"POST",args);
         return res.toUpperCase().equals("TRUE");
     }
     ////////////////////////////////////////////////////77
-    public Boolean addProducto(String codigo,String nombre,String desc,Integer precio,Integer cant){
+    public Boolean addProducto(String codigo,String nombre,String desc,Integer precio){
         String url = "?action=addP";
         HashMap<String,Object> args = new HashMap<>();
         args.put("codigo",codigo);
         args.put("nombre",nombre);
         args.put("desc",desc);
         args.put("precio",precio.toString());
-        args.put("cantidad",cant.toString());
         String res = cl.getOutputFromUrl(url,null,"POST",args);
         return res.toUpperCase().equals("TRUE");
     }
+
     ////////////////////////////////////////////////////77
     public Boolean addCompra(String usuario,String producto,Integer cant){
         String url = "?action=addC";

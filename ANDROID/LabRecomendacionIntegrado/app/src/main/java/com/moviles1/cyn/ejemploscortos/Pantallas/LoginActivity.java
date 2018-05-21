@@ -65,11 +65,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
-
-        if(model.instance == 0){
-            model.init();
-        }
-
         mPasswordView = (EditText) findViewById(R.id.password);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -176,6 +171,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         Model.setIp(ip.getText().toString());
         Usuario usuarioActivo = new Usuario();
         if(!cancel) {
+            model.init();
             Proxy p = Proxy.instancia();
             Usuario logeado = p.login(email, password);
             usuarioActivo = logeado;

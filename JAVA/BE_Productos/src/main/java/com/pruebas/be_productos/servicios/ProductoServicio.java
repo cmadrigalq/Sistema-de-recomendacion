@@ -45,8 +45,22 @@ public class ProductoServicio extends Servicio{
         }
         return res;
     }
+    public Boolean borrar(Producto p){
+        String sql = String.format(Querys.DELETEPRODUCTO, p.getCodigo());
+        String sql2 = String.format(Querys.BORRARCOMPRASBYP, p.getCodigo());
+        String sql3 = String.format(Querys.BORRARHISTORIALBYP, p.getCodigo());
+        super.executeQuery(sql3);
+        super.executeQuery(sql2);
+        super.executeQuery(sql);
+        return true;
+    }
+    
     public Boolean update(Producto p){
-        String sql = String.format(Querys.UPDATEPRODUCTO, p.getCantidad(),p.getCodigo());
+        String sql = String.format(Querys.UPDATEPRODUCTO,
+                                   p.getNombre(),
+                                   p.getDescripcion(),
+                                   p.getPrecio(),
+                                   p.getCodigo());
         super.executeQuery(sql);
         return  true;
     }
@@ -56,7 +70,9 @@ public class ProductoServicio extends Servicio{
                                    p.getNombre(),
                                    p.getDescripcion(),
                                    p.getPrecio(),
-                                   p.getCantidad());
+                                   p.getCantidad(),
+                                   p.getImagen(),
+                                   p.getRating());
         super.executeQuery(sql);
         return  true;
     }

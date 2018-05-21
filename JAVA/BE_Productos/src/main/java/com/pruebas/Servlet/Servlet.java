@@ -28,7 +28,8 @@ public class Servlet extends HttpServlet {
         try (PrintWriter out = res.getWriter()) {
             String accion = req.getParameter("action");
             String val1,val2,val3,val4;
-            Integer int1,int2;
+            Integer int1,int2,int3;
+            float float1;
             Control control = new Control();
             switch(accion){
                 case "login":
@@ -60,6 +61,12 @@ public class Servlet extends HttpServlet {
                     System.err.println(val1);
                     out.write(val1);
                 break;     
+                case "deleteP":
+                    val1 = req.getParameter("codigo");
+                    val1 = control.deleteProducto(val1);
+                    System.err.println(val1);
+                    out.write(val1);
+                break;   
                 case "listaU":
                     val1 = req.getParameter("arg");
                     val1 = control.listarUsuarios(val1);
@@ -76,9 +83,10 @@ public class Servlet extends HttpServlet {
                 break;    
                 case "updateP":
                     val1 = req.getParameter("codigo");
-                    val2 = req.getParameter("nuevaCant");
-                    int1 = Integer.valueOf(val2);
-                    val1 = control.Update(val1, int1);
+                    val2 = req.getParameter("nombre");
+                    val3 = req.getParameter("desc");
+                    int1 = Integer.valueOf(req.getParameter("precio"));
+                    val1 = control.Update(val1, val2,val3,int1);
                     System.err.println(val1);
                     out.write(val1);
                 break;    
@@ -88,9 +96,7 @@ public class Servlet extends HttpServlet {
                     val3 = req.getParameter("desc");
                     val4 = req.getParameter("precio");
                     int1 = Integer.parseInt(val4);
-                    val4 = req.getParameter("cantidad");
-                    int2 = Integer.parseInt(val4);
-                    val1 = control.addProducto(val1, val2, val3, int1, int2);
+                    val1 = control.addProducto(val1, val2, val3, int1);
                     System.err.println(val1);
                     out.write(val1);
                 break;    

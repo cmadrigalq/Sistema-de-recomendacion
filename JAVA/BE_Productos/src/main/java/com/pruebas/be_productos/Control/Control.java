@@ -9,6 +9,7 @@ import com.pruebas.be_productos.servicios.HistorialServicio;
 import com.pruebas.be_productos.servicios.ProductoServicio;
 import com.pruebas.be_productos.servicios.UsuariosServicio;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import org.json.JSONObject;
 
@@ -75,15 +76,27 @@ public class Control {
         return toJsonLP(res);
     }
     
-    public String Update(String codigo,int nuevaCantidad){
-        Producto p = new Producto(codigo, "", "", 0, nuevaCantidad,0,null);
+    public String Update(String codigo,String nombre,String desc,Integer precio){
+        Producto p = new Producto(
+                codigo,
+                nombre,
+                desc,
+                precio,
+                100,
+                0,
+                null);
         return ps.update(p).toString();
     }
-    public String addProducto(String codigo,String name,String desc,int precio,int cant){
-        Producto p = new Producto(codigo,name , desc,precio, cant,0,null);
+    public String addProducto(String codigo,String name,String desc,int precio){
+        
+        Producto p = new Producto(codigo,name , desc,precio, 100,0,4.3f);
         return ps.add(p).toString();
     }
-    
+    public String deleteProducto(String codigo){
+        Producto p = new Producto();
+        p.setCodigo(codigo);
+        return ps.borrar(p).toString();
+    }
     
     String toJson(Producto u) {
         JSONObject js = new JSONObject();
